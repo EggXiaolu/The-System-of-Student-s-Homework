@@ -16,14 +16,14 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String u_id=req.getParameter("u_id"); //获取账号
-        String u_pwd=req.getParameter("u_pwd"); //获取账号
+        String u_pwd=req.getParameter("u_pwd"); //获取密码
         User u = new User();
         u.setU_id(u_id);
         u.setU_pwd(u_pwd);
         //实现登录服务层的业务逻辑层
         loginService l = new loginServiceImpl();
         User user = l.loginService(u);
-        if(u_id.equals(user.getU_id())&&u_pwd.equals(user.getU_pwd())) {
+        if(user!=null) {
             req.setAttribute("user", user);
             req.getRequestDispatcher("mainPage.jsp").forward(req, resp);
         }

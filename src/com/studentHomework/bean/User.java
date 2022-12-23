@@ -67,4 +67,16 @@ public class User {
     public void setU_isdelete(int u_isdelete) {
         this.u_isdelete = u_isdelete;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "u_id='" + u_id + '\'' +
+                ", u_name='" + u_name + '\'' +
+                ", u_pwd='" + u_pwd + '\'' +
+                ", u_phone='" + u_phone + '\'' +
+                ", u_role=" + u_role +
+                ", u_isdelete=" + u_isdelete +
+                '}';
+    }
 }
