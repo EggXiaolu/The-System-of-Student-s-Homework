@@ -52,5 +52,20 @@
     <orderEntry type="library" name="Maven: com.aliyun:tea:1.1.14" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.12.13" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.15.0" level="project" />
+    <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+    <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>5.0.0</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp/jakarta.servlet.jsp-api -->
+    <dependency>
+        <groupId>jakarta.servlet.jsp</groupId>
+        <artifactId>jakarta.servlet.jsp-api</artifactId>
+        <version>3.0.0</version>
+        <scope>provided</scope>
+    </dependency>
   </component>
 </module>

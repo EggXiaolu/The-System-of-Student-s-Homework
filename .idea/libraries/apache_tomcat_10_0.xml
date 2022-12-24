@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="apache-tomcat-10.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../tomcat/apache-tomcat-10.0.27" />
+      <root url="jar://$PROJECT_DIR$/../../tomcat/apache-tomcat-10.0.27/lib/ecj-4.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../tomcat/apache-tomcat-10.0.27/lib/tea-console-0.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../tomcat/apache-tomcat-10.0.27/lib/tea-openapi-0.2.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../tomcat/apache-tomcat-10.0.27/lib/tea-util-0.2.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../tomcat/apache-tomcat-10.0.27/lib/jakartaee-migration-1.0.4-shaded.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../tomcat/apache-tomcat-10.0.27/webapps/docs/appdev/sample/src" />
+      <root url="file://$PROJECT_DIR$/../../tomcat/apache-tomcat-10.0.27/webapps/examples/WEB-INF/classes" />
+      <root url="file://$PROJECT_DIR$/../../tomcat/apache-tomcat-10.0.27/work/Catalina/localhost/ROOT" />
+    </SOURCES>
+  </library>
+</component>

@@ -12,8 +12,8 @@
         <title>登陆界面</title>
         <style>
             #frame{
-                width: 400px;
-                height: 350px;
+                width: 550px;
+                height: 400px;
                 margin-left: 35%;
                 margin-top: 10%;
                 background: lightskyblue;
@@ -28,13 +28,16 @@
 <body>
 <div id="frame">
     <div id="inner">
-        <label for="u_id">账号:</label><input type="text" id="u_id"><br><br>
-        <label for="u_pwd">密码:</label><input type="password" id="u_pwd"><br><br>
+        <label for="u_id">账号:</label><input  style="margin-left: 32px" type="text" id="u_id"><br><br>
+        <label for="u_pwd">密码:</label><input style="margin-left: 32px" type="password" id="u_pwd"><br><br>
         <label for="u_pwd1">确认密码:</label><input type="password" id="u_pwd1"><br><br>
-        <label for="u_name">姓名:</label><input type="text" id="u_name"><br><br>
-        <label for="u_phone">电话:</label><input type="text" id="u_phone"><br><br>
+        <label for="u_name">姓名:</label><input style="margin-left: 32px" type="text" id="u_name"><br><br>
+        <label for="u_phone">电话:</label><input style="margin-left: 32px" type="text" id="u_phone">
+        <label for="code">验证码:</label><input style="width: 50px" type="text" id="code">
+        <button id="bt_code">获取验证码</button>
+        <br><br>
         <form name="f_radio" method="post">
-            您的身份：<br>
+            您的身份：
             <input type="radio" name="r1" value=0>教师
             <input type="radio" name="r1" value=1 checked>学生
         </form>
@@ -42,6 +45,7 @@
         <span id="success" style="color: red">${success}</span>
         <script>
             let bt=document.getElementById("bt");
+            let bt_code = document.getElementById("bt_code")
             function check_answer(){
                 for(let i=0; i<document.f_radio.r1.length; i++){
                     if(document.f_radio.r1[i].checked===true) {
@@ -49,15 +53,25 @@
                     }
                 }
             }
+            bt_code.onclick=function (){
+                let phone_str = document.getElementById("u_phone").value;
+                alert(1)
+                if(phone_str===""){
+                    alert("请输入电话号码");
+                    return;
+                }
+                window.location.href="codeCheck?u_phone="+phone_str;
+            }
             bt.onclick=function() {
                 let id_str = document.getElementById("u_id").value;
                 let pwd_str = document.getElementById("u_pwd").value;
                 let pwd1_str = document.getElementById("u_pwd1").value;
                 let name_str = document.getElementById("u_name").value;
                 let phone_str = document.getElementById("u_phone").value;
+                let code_str = document.getElementById("code").value;
                 let t = check_answer();
                 alert(t)
-                if (id_str === "" || pwd_str === "" || pwd1_str === "" || name_str === "" || phone_str === "") {
+                if (id_str === "" || pwd_str === "" || pwd1_str === "" || name_str === "" || phone_str === "" || code_str === "") {
                     alert("请输入完整信息！")
                     return;
                 }

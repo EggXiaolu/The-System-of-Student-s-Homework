@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="tea-console-0.0.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../tomcat/apache-tomcat-10.0.27/lib/tea-console-0.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../tomcat/apache-tomcat-10.0.27/lib/tea-openapi-0.2.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../tomcat/apache-tomcat-10.0.27/lib/tea-util-0.2.16.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
