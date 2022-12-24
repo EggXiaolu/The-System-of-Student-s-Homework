@@ -11,7 +11,7 @@
     <title>主界面</title>
 </head>
 <body>
-欢迎${user.getU_name()}<br>
+欢迎学生：${user.getU_name()}<br>
 
 </body>
 </html>

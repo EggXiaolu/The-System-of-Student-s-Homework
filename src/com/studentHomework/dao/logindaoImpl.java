@@ -22,8 +22,8 @@ public class logindaoImpl implements logindao{
                 System.out.println("数据库连接成功");
                 Statement stmt = con.createStatement();
                 //sql语句
-                //String sql = "SELECT * FROM `homework_database`.`users` WHERE `u_id` LIKE "+ u.getU_id()+" AND `u_pwd` LIKE "+ u.getU_pwd();
-                String sql = "SELECT * FROM `homework_database`.`users` WHERE u_id LIKE 21211835111 AND u_pwd LIKE 1";
+                String sql = "SELECT * FROM `homework_database`.`users` WHERE `u_id` LIKE "+ u.getU_id()+" AND `u_pwd` LIKE "+ u.getU_pwd();
+                //String sql = "SELECT * FROM `homework_database`.`users` WHERE u_id LIKE 21211835111 AND u_pwd LIKE 1";
                 ResultSet rs = stmt.executeQuery(sql);
                 while(rs.next()){
                     User user = new User();
@@ -38,7 +38,7 @@ public class logindaoImpl implements logindao{
             }
         }
         catch (ClassNotFoundException e){
-            System.out.println("数据库连接驱动没有安装");
+            System.out.println("数据库连接驱动加载失败");
         }catch (SQLException e){
             e.printStackTrace();
             System.out.println("数据库连接失败");

@@ -23,27 +23,32 @@
             margin-top: 10%;
         }
     </style>
-
 </head>
 <body>
 <div id="frame">
     <div id="inner">
         <label for="u_id">账号:</label><input type="text" id="u_id"><br><br>
         <label for="u_pwd">密码:</label><input type="password" id="u_pwd"><br><br>
-        <button style="margin-left: 40px" id="bt_1">忘记密码</button><button style="margin-left: 40px" id="bt_2">登录</button>
-        <span id="error"></span>
+        <button style="margin-left: 10px" id="bt_1">忘记密码</button><button style="margin-left: 20px" id="bt_2">登录</button><button style="margin-left: 20px" id="bt_3">注册</button><br>
+        <span id="error" style="color: red">${error}</span>
         <script>
-            let bt2=document.getElementById("bt_2")
+            let bt1 = document.getElementById("bt_1")
+            let bt2 = document.getElementById("bt_2")
+            let bt3 = document.getElementById("bt_3")
             bt2.onclick=function (){
                 //检查输入是否为空
                 let id_str = document.getElementById("u_id").value;
                 let pwd_str = document.getElementById("u_pwd").value;
-                if(id_str==null || pwd_str==null || id_str=="" || pwd_str==""){
+                if(id_str==="" || pwd_str===""){
                     alert("账号密码不能为空")
                     return;
                 }
                 //访问服务器
-                window.location.href = "login?u_id="+id_str+"&u_pwd="+pwd_str
+                window.location.href = "login?u_id="+id_str+"&u_pwd="+pwd_str;
+                document.getElementById("error").innerHTML=error;
+            }
+            bt3.onclick = function (){
+                window.location.href='register.jsp';
             }
         </script>
     </div>
