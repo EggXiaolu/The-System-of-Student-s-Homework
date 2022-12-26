@@ -1,5 +1,6 @@
 package com.studentHomework.servlet;
 
+import com.studentHomework.bean.Course;
 import com.studentHomework.bean.User;
 import com.studentHomework.service.FileService;
 import com.studentHomework.service.FileServiceImpl;
@@ -27,12 +28,14 @@ public class loginServlet extends HttpServlet {
         //实现登录服务层的业务逻辑层
         loginService l = new loginServiceImpl();
         User user = l.loginService(u);
+        FileService fl = new FileServiceImpl();
         if(user!=null) {
             req.setAttribute("user", user);
             if(user.getU_role()==1){
+                ArrayList<Course> arr = fl.getAllcourses();
+                req.setAttribute("arr", arr);
                 req.getRequestDispatcher("stu_mainPage.jsp").forward(req, resp);
             }else{
-                FileService fl = new FileServiceImpl();
                 ArrayList<User> arr = fl.getAllstudents();
                 req.setAttribute("arr", arr);
                 req.getRequestDispatcher("tea_mainPage.jsp").forward(req, resp);

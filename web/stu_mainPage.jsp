@@ -46,12 +46,14 @@
             width: 150px;
             border: black 1px solid;
             padding:1px;
-
         }
-
     </style>
-
-
+    <script>
+        function search(){
+            let v = document.getElementById("fileId").value;
+            window.location.href="stu_mainServlet?v=\""+v+"\"&id=${user.getU_id()}"
+        }
+    </script>
 </head>
 <body>
 
@@ -65,56 +67,30 @@
 
 <div id="search">
     <div id="inner_s">
-        <input type="text" style="font-size: 20px; height: 26px;width: 190px">&nbsp;&nbsp;
-        <button  style="font-size: 18px; height: 28px;">查询</button>
+        <input type="text" style="font-size: 20px; height: 26px;width: 190px" id="fileId">&nbsp;&nbsp;
+        <button  style="font-size: 18px; height: 28px;" onclick="search()">查询</button>
     </div>
 </div>
 
 <div>
     <table id="table" style="height: 30px;width: 700px;border: black 1px solid;border-collapse:collapse;">
         <tr >
-            <td>学生id</td>
-            <td>学生名字</td>
-            <td>学生电话</td>
+            <td>课程id</td>
+            <td>课程名称</td>
+            <td>任教老师</td>
             <td>查看成绩</td>
             <td>操作</td>
         </tr>
-        <tr>
-            <td>1001</td>
-            <td>赵括</td>
-            <td>125421554</td>
-            <td><button style="color: chocolate">查看成绩</button></td>
-            <td><button style="color: chocolate">修改</button>
-                <button style="color: chocolate">删除</button>
-            </td>
-        </tr>
-        <tr>
-            <td>1001</td>
-            <td>赵括</td>
-            <td>125421554</td>
-            <td><button style="color: chocolate">查看成绩</button></td>
-            <td><button style="color: chocolate">修改</button>
-                <button style="color: chocolate">删除</button>
-            </td>
-        </tr>
-        <tr>
-            <td>1001</td>
-            <td>赵括</td>
-            <td>125421554</td>
-            <td><button style="color: chocolate">查看成绩</button></td>
-            <td><button style="color: chocolate">修改</button>
-                <button style="color: chocolate">删除</button>
-            </td>
-        </tr>
-        <tr>
-            <td>1001</td>
-            <td>赵括</td>
-            <td>125421554</td>
-            <td><button style="color: chocolate">查看成绩</button></td>
-            <td><button style="color: chocolate">修改</button>
-                <button style="color: chocolate">删除</button>
-            </td>
-        </tr>
+        <c:forEach items="${arr}" var="item">
+            <tr>
+                <td>${item.getC_id()}</td>
+                <td>${item.getC_name()}</td>
+                <td>${item.getC_teacher()}</td>
+                <td><button style="color: chocolate">查看成绩</button></td>
+                <td><button style="color: chocolate">提交</button>
+                </td>
+            </tr>
+        </c:forEach>
     </table>
 </div>
 
