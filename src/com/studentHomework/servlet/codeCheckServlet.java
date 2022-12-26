@@ -13,13 +13,15 @@ import java.io.IOException;
 public class codeCheckServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String phone_str=req.getParameter("u_phone");
+        String phone_str = req.getParameter("u_phone");
         System.out.println(phone_str);
+        String code = null;
         try {
-            String code = Sample.main(phone_str);
+            code = Sample.main(phone_str);
         } catch (Exception e) {
             System.out.println("验证码获取失败!");
         }
-        req.getRequestDispatcher("register.jsp").forward(req, resp);
+        req.setAttribute("ret_code", code);
+        //req.getRequestDispatcher("register.jsp").forward(req, resp);
     }
 }

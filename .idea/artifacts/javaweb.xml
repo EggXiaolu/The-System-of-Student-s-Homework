@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="javaweb1:war exploded">
-    <output-path>$PROJECT_DIR$/web/WEB-INF/artifacts/javaweb1_war_exploded</output-path>
+  <artifact type="exploded-war" name="javaweb">
+    <output-path>$PROJECT_DIR$/web/WEB-INF/artifacts/javaweb</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

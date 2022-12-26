@@ -19,7 +19,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_9">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -64,6 +64,18 @@
     </orderEntry>
     <orderEntry type="library" name="servlet-api" level="project" />
     <orderEntry type="library" name="jakartaee-migration-1.0.4-shaded" level="project" />
+    <orderEntry type="library" name="okhttp-3.12.13" level="project" />
+    <orderEntry type="library" name="okio-1.15.0" level="project" />
+    <orderEntry type="library" name="gson-2.9.0" level="project" />
+    <orderEntry type="library" name="standard-1.1.2" level="project" />
+    <orderEntry type="library" name="jakarta.servlet.jsp.jstl-api-2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:jstl:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.web:jakarta.servlet.jsp.jstl:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.servlet:jakarta.servlet-api:5.0.0" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.el:jakarta.el-api:4.0.0" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.activation:jakarta.activation:2.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun:dysmsapi20170525:2.0.23" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun:endpoint-util:0.0.7" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun:tea:1.2.0" level="project" />
@@ -86,8 +98,5 @@
     <orderEntry type="library" name="Maven: org.dom4j:dom4j:2.0.3" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun:tea-console:0.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun:tea-util:0.2.16" level="project" />
-    <orderEntry type="library" name="okhttp-3.12.13" level="project" />
-    <orderEntry type="library" name="okio-1.15.0" level="project" />
-    <orderEntry type="library" name="gson-2.9.0" level="project" />
   </component>
 </module>

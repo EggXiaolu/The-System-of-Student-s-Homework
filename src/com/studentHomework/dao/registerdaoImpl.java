@@ -32,7 +32,7 @@ public class registerdaoImpl implements registerdao{
             System.out.println("数据库连接驱动加载失败");
         }catch (SQLException e){
             e.printStackTrace();
-            System.out.println("数据已存在，添加失败！");
+            System.out.println("数据查找失败！");
         }
         return false;
     }

@@ -22,7 +22,7 @@ public class logindaoImpl implements logindao{
                 System.out.println("数据库连接成功");
                 Statement stmt = con.createStatement();
                 //sql语句
-                String sql = "SELECT * FROM `homework_database`.`users` WHERE `u_id` LIKE "+ u.getU_id()+" AND `u_pwd` LIKE "+ u.getU_pwd();
+                String sql = "SELECT * FROM `homework_database`.`users` WHERE `u_id` = "+ u.getU_id()+" AND `u_pwd` = "+ u.getU_pwd();
                 //String sql = "SELECT * FROM `homework_database`.`users` WHERE u_id LIKE 21211835111 AND u_pwd LIKE 1";
                 ResultSet rs = stmt.executeQuery(sql);
                 while(rs.next()){
@@ -41,7 +41,7 @@ public class logindaoImpl implements logindao{
             System.out.println("数据库连接驱动加载失败");
         }catch (SQLException e){
             e.printStackTrace();
-            System.out.println("数据库连接失败");
+            System.out.println("数据查找失败");
         }
         return null;
     }

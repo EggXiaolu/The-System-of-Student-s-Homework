@@ -42,7 +42,8 @@
             <input type="radio" name="r1" value=1 checked>学生
         </form>
         <button style="margin-left: 100px" id="bt">确定</button>
-        <span id="success" style="color: red">${success}</span>
+        <span id="success" >${success}</span>
+        <span id="ret_code">${ret_code}</span>
         <script>
             let bt=document.getElementById("bt");
             let bt_code = document.getElementById("bt_code")
@@ -55,12 +56,11 @@
             }
             bt_code.onclick=function (){
                 let phone_str = document.getElementById("u_phone").value;
-                alert(1)
                 if(phone_str===""){
                     alert("请输入电话号码");
                     return;
                 }
-                window.location.href="codeCheck?u_phone="+phone_str;
+                location.href="codeCheck?u_phone="+phone_str;
             }
             bt.onclick=function() {
                 let id_str = document.getElementById("u_id").value;
@@ -70,13 +70,16 @@
                 let phone_str = document.getElementById("u_phone").value;
                 let code_str = document.getElementById("code").value;
                 let t = check_answer();
-                alert(t)
                 if (id_str === "" || pwd_str === "" || pwd1_str === "" || name_str === "" || phone_str === "" || code_str === "") {
                     alert("请输入完整信息！")
                     return;
                 }
-                if ((pwd_str !== pwd1_str)) {
+                if (pwd_str !== pwd1_str) {
                     alert("密码不一致，请重新输入！")
+                    return;
+                }
+                if(code_str!==ret_code){
+                    alert("验证码错误！")
                     return;
                 }
                 //访问服务器
