@@ -28,12 +28,12 @@ public class loginServlet extends HttpServlet {
         loginService l = new loginServiceImpl();
         User user = l.loginService(u);
         if(user!=null) {
-            FileService fl = new FileServiceImpl();
-            ArrayList<User> arr = fl.getAllstudents();
             req.setAttribute("user", user);
             if(user.getU_role()==1){
                 req.getRequestDispatcher("stu_mainPage.jsp").forward(req, resp);
             }else{
+                FileService fl = new FileServiceImpl();
+                ArrayList<User> arr = fl.getAllstudents();
                 req.setAttribute("arr", arr);
                 req.getRequestDispatcher("tea_mainPage.jsp").forward(req, resp);
             }

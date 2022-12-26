@@ -24,7 +24,7 @@ public class FiledaoImpl implements Filedao{
                 System.out.println("数据库连接成功");
                 Statement stmt = con.createStatement();
                 //sql语句
-                String sql = "SELECT * FROM `homework_database`.`users` WHERE `u_role` LIKE 1 AND `u_isdelete` LIKE 1";
+                String sql = "SELECT * FROM `homework_database`.`users` WHERE `u_role` = 1 AND `u_isdelete` = 1";
                 ResultSet rs = stmt.executeQuery(sql);
                 while(rs.next()){
                     User user = new User();
@@ -49,8 +49,9 @@ public class FiledaoImpl implements Filedao{
     }
 
     @Override
-    public User getFileByNameOrId(String v) {
+    public ArrayList<User> getFileByNameOrId(String v) {
         //查找特定对象
+        ArrayList<User> arr =new ArrayList<>();
         String driver = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/";
 
@@ -64,7 +65,7 @@ public class FiledaoImpl implements Filedao{
                 System.out.println("数据库连接成功");
                 Statement stmt = con.createStatement();
                 //sql语句
-                String sql = "SELECT * FROM `homework_database`.`users` WHERE `u_name` = "+v+" OR `u_id` = "+v;
+                String sql = "SELECT * FROM `homework_database`.`users` WHERE `u_name` LIKE "+v+" OR `u_id` LIKE "+v;
                 ResultSet rs = stmt.executeQuery(sql);
                 while(rs.next()){
                     User user = new User();
@@ -74,7 +75,7 @@ public class FiledaoImpl implements Filedao{
                     user.setU_phone(rs.getString("u_phone"));
                     user.setU_role(rs.getInt("u_role"));
                     user.setU_isdelete(rs.getInt("u_isdelete"));
-                    return user;
+                    arr.add(user);
                 }
             }
         }
@@ -84,6 +85,6 @@ public class FiledaoImpl implements Filedao{
             e.printStackTrace();
             System.out.println("数据查找失败");
         }
-        return null;
+        return arr;
     }
 }

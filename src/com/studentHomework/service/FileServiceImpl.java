@@ -4,7 +4,6 @@ import com.studentHomework.bean.User;
 import com.studentHomework.dao.Filedao;
 import com.studentHomework.dao.FiledaoImpl;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class FileServiceImpl implements FileService{
@@ -16,7 +15,7 @@ public class FileServiceImpl implements FileService{
     }
 
     @Override
-    public User getFileByNameOrId(String v) {
+    public ArrayList<User> getFileByNameOrId(String v) {
         return fs.getFileByNameOrId(v);
     }
 }

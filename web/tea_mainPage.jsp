@@ -53,7 +53,7 @@
     <script>
         function search(){
             let v = document.getElementById("fileId").value;
-            window.location.href="mainServlet?v="+v+"&id=${user.getU_id()}"
+            window.location.href="tea_mainServlet?v="+v+"&id=${user.getU_id()}"
         }
     </script>
 

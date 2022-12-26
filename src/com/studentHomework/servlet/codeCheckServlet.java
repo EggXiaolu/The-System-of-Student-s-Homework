@@ -22,6 +22,6 @@ public class codeCheckServlet extends HttpServlet {
             System.out.println("验证码获取失败!");
         }
         req.setAttribute("ret_code", code);
-        //req.getRequestDispatcher("register.jsp").forward(req, resp);
+        req.getRequestDispatcher("register.jsp").forward(req, resp);
     }
 }

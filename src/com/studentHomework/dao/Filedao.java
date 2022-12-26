@@ -7,5 +7,5 @@ import java.util.ArrayList;
 public interface Filedao {
     ArrayList<User> getAllStudent();
 
-    User getFileByNameOrId(String v);
+    ArrayList<User> getFileByNameOrId(String v);
 }

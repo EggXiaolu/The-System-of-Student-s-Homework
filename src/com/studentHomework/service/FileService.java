@@ -7,5 +7,5 @@ import java.util.ArrayList;
 public interface FileService {
     ArrayList<User> getAllstudents();
 
-    User getFileByNameOrId(String v);
+    ArrayList<User> getFileByNameOrId(String v);
 }
